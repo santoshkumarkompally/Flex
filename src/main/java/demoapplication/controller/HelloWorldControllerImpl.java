@@ -1,7 +1,8 @@
 package demoapplication.controller;
 
 import com.flex.annotations.Component;
-import com.flex.models.Autowired;
+import com.flex.annotations.Autowired;
+import com.flex.annotations.Qualifier;
 import demoapplication.service.HelloWorldService;
 
 @Component
@@ -13,7 +14,7 @@ public class HelloWorldControllerImpl implements HelloWorldController {
     }
 
     @Autowired
-    public HelloWorldControllerImpl(HelloWorldService helloWorldService) {
+    public HelloWorldControllerImpl(@Qualifier(name = "implementation2") HelloWorldService helloWorldService) {
         this.helloWorldService = helloWorldService;
     }
 

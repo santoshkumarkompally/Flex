@@ -1,11 +1,12 @@
-package com.flex.models;
+package com.flex.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(value = ElementType.CONSTRUCTOR)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Autowired {
+@Target(value = {ElementType.PARAMETER})
+public @interface Qualifier {
+    String name();
 }
